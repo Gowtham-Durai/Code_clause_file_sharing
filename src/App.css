@@ -4,7 +4,7 @@ body {
     margin:0;
     width:100vw;
     height:100vh;
-    background-color: #5e43f38a;
+    background: linear-gradient(to bottom right ,white,#2600ff8a,white);
     box-sizing: border-box; 
   }
   #root{
@@ -35,4 +35,11 @@ body {
 }
 .link:hover{
   cursor:pointer;
+}
+
+@media screen and(max-width:510px) {
+body div {
+  background-color: red;
+  /* flex-direction: column !important; */
+}
 }

@@ -1,13 +1,14 @@
 import user from "../Resource/user-folder.png"
 import File from "./file";
+
 const list={
     frame:{
         width:"50%",
-        backgroundColor:"#DAD3FF",
+        backgroundColor:"#e6e2fa",
         padding:"20px",
         display:"flex",
         flexDirection:"column",
-        borderRadius:"25px",
+        borderRadius:"10px",
         },
     header:{
             display:"flex",
@@ -30,7 +31,7 @@ const list={
 
 export default function ListFrame({files,type,link}) {
 
-     return (<div style={list.frame}>
+     return (<div style={list.frame} className="fileframe">
             <h1 style={list.header}>
                 <img src={user} alt="userFolders" />
                 Uploads</h1>

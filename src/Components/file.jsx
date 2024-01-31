@@ -1,7 +1,8 @@
 import folder from "../Resource/folder.svg"
 import file from "../Resource/file.svg"
 import video from "../Resource/vidoe.png"
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const fstyle={
     row:{
         height:"3rem",
@@ -20,7 +21,7 @@ function image(props){
 }
 
 function copy(url){
-    console.log(url);
+    toast.success("File link copied (only one time use)");
     var inpu=document.createElement("textarea");
     inpu.innerText=url;
     document.body.appendChild(inpu);
@@ -32,7 +33,19 @@ function copy(url){
 let i=0;
 export default function File(props){
     return (
+
     <div  style={fstyle.row} onClick={()=>copy(props.link)} className="link">
+        <ToastContainer position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+        transition= "Bounce"/>
         <img src={image({type:props.type})} style={{height:"100%"}} alt="file" />
         <h3>{props.value}</h3>
     </div>);
